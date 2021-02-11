@@ -1,21 +1,25 @@
 # Miniguide till publicering av Docker image
 ### Heroku
 
-Det finns två sätt att publicera en image till Heroku: med *container registry* och med *yml-fil*. I båda fallen behöver du ha med en webbserver i image-filen, till exempel http-server eller nginx.
+Det finns två sätt att publicera en image till Heroku: med *container registry* och med *yml-fil*. I båda fallen behöver du ha med en webbserver i din Dockerfile, till exempel http-server eller nginx.
 
-#### Container registry
+---
+
+#### 1 Container registry
 Läs mer här:
 + [Dockerize Vue app](https://vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
 + [Container registry and runtime](https://devcenter.heroku.com/articles/container-registry-and-runtime)
 
 
-#### Byt stack
+##### Byt stack
 Heroku har Node-miljö som standardinställning. Du måste byta till `container`. Det kan man göra från Heroku Dashboard, fliken Settings; eller genom att skriva i terminalen:
 ```bash
 heroku stack:set container -a namnet-på-din-heroku-app
 ```
 
-#### Konfigurationsfil
+---
+
+#### 2 Konfigurationsfil
 Din `Dockerfile` kan innehålla samma saker som i guiden "Dockerize Vue app" ovan.
 
 Följande guide utgår från [Building Docker Images with heroku.yml](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)
